@@ -8,13 +8,19 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:wght@400;500;700&display=swap'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Open+Sans:wght@400;600;700&display=swap">
     <style>
       /* General Styling */
       body {
         background: linear-gradient(135deg, #e0f7fa, #b2ebf2); /* Light teal gradient */
         color: #333;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Open Sans', sans-serif; /* Elegant font for body text */
         line-height: 1.6;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Lora', serif; /* Elegant serif font for headings */
+        font-weight: 600;
       }
 
       .w3-teal {
@@ -28,15 +34,16 @@
       }
 
       .hover-grow:hover {
-        transform: scale(1.05);
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        transform: scale(1.1);
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease-in-out;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
       }
 
       .rounded-image {
-        border-radius: 50%;
-        border: 5px solid #00796b; /* Teal border */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        border: none; /* Remove the border */
+        border-radius: 0; /* Remove rounded corners */
+        box-shadow: none; /* Remove the shadow */
+        transition: none; /* Remove hover effects */
       }
 
       /* Updated Progress Bar Styling */
@@ -53,10 +60,12 @@
         height: 100%;
         background: #00796b; /* Teal color for consistency */
         border-radius: 20px;
-        animation: growBar 1.5s ease-in-out;
+        animation: growBar 1.5s cubic-bezier(0.25, 1, 0.5, 1);
         text-align: center;
         color: white;
         font-weight: bold;
+        font-size: 12px; /* Smaller text size */
+        font-family: 'Open Sans', sans-serif; /* Consistent font for progress bar text */
         line-height: 30px;
       }
 
@@ -75,14 +84,22 @@
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         background: #fff;
         margin-bottom: 20px;
+        transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+      }
+
+      .w3-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
       }
 
       footer {
         background: linear-gradient(135deg, #00796b, #004d40); /* Teal gradient */
         color: white;
         text-align: center;
+        font-family: 'Open Sans', sans-serif; /* Consistent font for footer */
         padding: 20px;
         box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 1.5s ease-in-out;
       }
 
       footer a {
@@ -105,7 +122,7 @@
         border-radius: 25px;
         font-weight: bold;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
       }
 
       .w3-button:hover {
@@ -118,6 +135,42 @@
         border-radius: 20px; /* Add rounded corners */
         overflow: hidden; /* Ensure content stays within the rounded corners */
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Add a shadow for better visual effect */
+        transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+      }
+
+      .w3-card-4:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Fade-in animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      /* Slide-up animation */
+      @keyframes slideUp {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .slide-up {
+        animation: slideUp 1s ease-in-out;
       }
     </style>
   </head>
@@ -142,18 +195,28 @@
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>kpramanick215@gmail.com</p>
           <hr>
 
-          <!-- Download CV Section -->
-          <button class="w3-button w3-teal w3-round-large hover-grow">
-            <a href="https://drive.google.com/file/d/1mKZ1UoRSkrV9zf737DxgAcHjJMc-53Pl/view?usp=sharing" download style="text-decoration: none; color: white;">
-              <i class="fa fa-download fa-fw w3-text-white"></i>Download CV
-            </a>
-          </button>
+          <!-- Download CV and APK Section -->
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <!-- Download CV Button -->
+            <button class="w3-button w3-teal w3-round-large hover-grow">
+              <a href="https://drive.google.com/file/d/1mKZ1UoRSkrV9zf737DxgAcHjJMc-53Pl/view?usp=sharing" download style="text-decoration: none; color: white;">
+                <i class="fa fa-download fa-fw w3-text-white"></i>Download CV
+              </a>
+            </button>
+
+            <!-- Download APK Button -->
+            <button class="w3-button w3-teal w3-round-large hover-grow">
+              <a href="https://www.upload-apk.com/sHLs2gwYt3Ti80S" download style="text-decoration: none; color: white;">
+                <i class="fa fa-android fa-fw w3-text-white"></i>Download APK
+              </a>
+            </button>
+          </div>
           <hr>
 
           <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
           <p>Python</p>
           <div class="progress-bar-container">
-            <div class="progress-bar" style="width: 90%;">Proficient in Basics, Pandas & Numpy</div>
+            <div class="progress-bar" style="width: 90%;">Pandas, Numpy, Matplotlib, Seaborn & Scikit-learn</div>
           </div>
 
           <p>R</p>
@@ -168,12 +231,12 @@
 
           <p>PowerBI</p>
           <div class="progress-bar-container">
-            <div class="progress-bar" style="width: 75%;">Proficient in Functions & Visualization</div>
+            <div class="progress-bar" style="width: 75%;">Data Transformation, Cleaning & Visualization</div>
           </div>
 
           <p>Microsoft Excel</p>
           <div class="progress-bar-container">
-            <div class="progress-bar" style="width: 60%;">Proficient in Functions, Vlookup, etc</div>
+            <div class="progress-bar" style="width: 60%;">Functions & Visualization</div>
           </div>
           <br>
 
@@ -260,4 +323,4 @@
 </footer>
 
 </body>
-</html>    
+</html>
